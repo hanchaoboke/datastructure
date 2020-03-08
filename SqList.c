@@ -48,7 +48,7 @@ bool InitList (SqList *L){
 /*
 SqList create
 */
-bool CreateList(SqList *L, int x){
+bool CreateList(SqList *L, ElemType x){
     if (L->length == Maxsize)
         return false;
     L->elem[L->length] = x;
@@ -59,7 +59,7 @@ bool CreateList(SqList *L, int x){
 /*
 GetElem in SqlList
 */
-bool GetElem(SqList L, int n, int *elem){
+bool GetElem(SqList L, int n, ElemType *elem){
     if(n < 1 || n > L.length - 1)
         return false;
     *elem = L.elem[n - 1];
@@ -69,7 +69,7 @@ bool GetElem(SqList L, int n, int *elem){
 /*
 InsertElem to SqlList
 */
-bool InsertElem(SqList *L, int n, int elem){
+bool InsertElem(SqList *L, int n, ElemType elem){
     if(n < 1 || n > L->length - 1)
         return false;
     if(L->length - 1 == Maxsize)
@@ -86,7 +86,7 @@ bool InsertElem(SqList *L, int n, int elem){
 /*
 DeleteElem in SqList
 */
-bool DeleteElem(SqList *L, int n){
+bool DeleteElem(SqList *L, ElemType n){
     if(n < 1 || n > L->length)
         return false;
     for (int i = n - 1; i < L->length; i++)
@@ -138,7 +138,5 @@ int main(int argc, char const *argv[])
     }
     putchar('\n');
 
-
-    
     return 0;
 }
